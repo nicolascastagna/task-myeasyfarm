@@ -1,0 +1,32 @@
+.title-preview {
+    font-size: 14px;
+    text-align: center;
+    font-weight: 500;
+    margin: 0 !important;
+    padding-bottom: 10px;
+}
+.btn-preview {
+    cursor: pointer;
+    background: none;
+    display: flex;
+    justify-content: center;
+    padding: 5px 10px;
+    &:hover {
+        color: $color-1;
+    }
+}
+
+.display-preview {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    .title-cancel {
+        position: absolute;
+        margin: 10px;
+        top: 0;
+    }
+    .leaflet-container {
+        width: 100%;
+        height: 100%;
+    }
+}

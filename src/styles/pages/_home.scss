@@ -1,0 +1,42 @@
+.container-home {
+    display: flex;
+    height: 100vh;
+    margin-top: auto;
+    margin-bottom: auto;
+    justify-content: center;
+    align-items: center;
+    .btn-start {
+        padding: 20px 50px;
+        background: white;
+        font-size: 22px;
+        background: $color-1;
+        letter-spacing: 3px;
+        margin: 10px;
+        width: 100%;
+        cursor: pointer;
+        position: relative;
+        border: 2px solid $color-1;
+        overflow: hidden;
+        z-index: 1;
+        &:hover {
+            z-index: 5;
+            border: 2px solid $color-2;
+        }
+        &:after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0; bottom: 0; left: 0; right: 0;
+        transition: 0.4s;
+        background: $color-2;
+        }
+    }
+    .btn-start::after {
+        height: 100%;
+        width: 0;
+    }
+    
+    .btn-start:hover::after {
+      width: 100%;
+    }
+}
