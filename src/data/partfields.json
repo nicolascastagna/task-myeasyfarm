@@ -325,10 +325,82 @@
                ]
             ]
          },
-         "color_hex": "3399FF"
-      }
+         "color_hex": "E32400"
+      },
+      {
+      "id": "b9234269-177c-4cec-962a-906ed983c817",
+      "parent_id": null,
+      "created_at": "2022-03-09T09:14:54.243659+00:00",
+      "updated_at": "2022-03-09T09:14:54.243663+00:00",
+      "designator": "LA BOUDINOISE",
+      "description": null,
+      "external_id": null,
+      "color": 197,
+      "farm_id": 217,
+      "customer_id": 47,
+      "account_id": "5e4e86bd-ac21-4c0d-9e9e-93f0f2489f4d",
+      "specified_area": null,
+      "calculated_area": 3.861,
+      "crop_id": 1068,
+      "crop_variety_id": null,
+      "soil": "Argile",
+      "soil_type_id": null,
+      "year": null,
+      "options": [],
+      "center": [
+         4.955664323,
+         49.67928723
+      ],
+      "boundaries": {
+         "type": "MultiPolygon",
+         "coordinates": [
+            [
+               [
+                  [
+                     4.957082,
+                     49.678206
+                  ],
+                  [
+                     4.955687,
+                     49.678997
+                  ],
+                  [
+                     4.956958,
+                     49.679605
+                  ],
+                  [
+                     4.955853,
+                     49.680872
+                  ],
+                  [
+                     4.954298,
+                     49.680271
+                  ],
+                  [
+                     4.955129,
+                     49.679337
+                  ],
+                  [
+                     4.954147,
+                     49.678851
+                  ],
+                  [
+                     4.956475,
+                     49.677571
+                  ],
+                  [
+                     4.957082,
+                     49.678206
+                  ]
+               ]
+            ]
+         ]
+      },
+      "geometries": [],
+      "color_hex": "FB9B36"
+   }
    ],
    "limit": 36,
    "offset": 0,
-   "count": 2
+   "count": 3
 }
