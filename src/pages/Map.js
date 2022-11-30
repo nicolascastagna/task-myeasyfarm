@@ -18,12 +18,23 @@ const Map = () => {
     partfieldsData.items[0].center[0],
   ];
 
+  const onEachCountry = (feature, layer) => {
+    console.log(feature);
+    return {
+      color: feature.properties.color,
+      opacity: 0.1,
+      weight: 1,
+      fillColor: feature.properties.color,
+      geometry: feature.geometry.coordinates,
+    };
+  };
+
   useEffect(() => {
     setCoordinatesCenter(MapCenter);
   }, []);
 
   const handlePreview = (e) => {
-    soilmapData.items.filter((el) => el.partfield_id === soilmapData.items.id);
+    soilmapData.items.filter((el) => el.id === partfieldsData.items.id);
     setIsPreview(true);
   };
 
@@ -40,7 +51,7 @@ const Map = () => {
           attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        {/* <GeoJSON data={mapData.data.features[0].features} /> */}
+
         {partfieldsData.items.map((state, i) => {
           const coordinates = state.boundaries.coordinates[0][0].map((item) => [
             item[1],
@@ -81,25 +92,32 @@ const Map = () => {
                 </>
               </Popup>
               {isPreview &&
-                partfieldsData.items.id === soilmapData.items.partfield_id &&
+                partfieldsData.items.id === soilmapData.items.id &&
                 soilmapData.items.map(function (item, index) {
                   //   const polygon =
                   //   item.features.geometry.coordinates[0][0].map(
                   //     (item) => [item[1], item[0]]
                   //   );
                   // console.log(polygon);
-                  // const color = `#${map.color_hex}`;
+                  // const color = `#${item.properties.color}`;
+
+                  console.log(item.mapdata.features);
 
                   return (
-                    <GeoJSON data={item.mapdata.features} key={index.id} />
+                    <GeoJSON
+                      data={item.mapdata.features}
+                      key={index}
+                      style={onEachCountry}
+                      onEachFeature={onEachCountry}
+                    />
                   );
                   // return (
                   //   <Polygon
-                  //     key={"soil-" + index + "-" + item.id}
-                  //     fillColor={colorFields}
-                  //     color={colorFields}
+                  //     key={item.properties.id}
+                  //     fillColor={item.properties.color}
+                  //     color={item.properties.color}
                   //     weight={2}
-                  //     positions={item.mapdata.features[0].geometry.coordinates}
+                  //     positions={polygon}
                   //   />
                   // );
                 })}
